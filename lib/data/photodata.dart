@@ -18,12 +18,19 @@ class _RecentPhotosState extends State<RecentPhotos> {
       height: MediaQuery.of(context).size.height * 0.1,
       // height: 50,
       // color: Colors.blue,
-      child: Stack(
-        children: [
-          Image(
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(5),
+          color: Colors.red,
+          image: DecorationImage(
             image: AssetImage('Assets/images/cheerful-man-eating-poke.jpg'),
             fit: BoxFit.fill,
-          ),
+          )),
+      child: Stack(
+        children: [
+          /*   Image(
+            image: AssetImage('Assets/images/cheerful-man-eating-poke.jpg'),
+            fit: BoxFit.fill,
+          ), */
           Positioned.fill(
             child: Align(
               alignment: Alignment.bottomLeft,
@@ -35,7 +42,7 @@ class _RecentPhotosState extends State<RecentPhotos> {
           ),
           Positioned(
             child: Align(
-              alignment: Alignment.topLeft,
+              alignment: Alignment.topRight,
               child: Text(
                 "0",
                 style: TextStyle(color: Colors.white),

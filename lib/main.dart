@@ -34,6 +34,7 @@ class __MyhomePageState extends State<_MyhomePage> {
       length: 6,
       child: Scaffold(
         appBar: AppBar(
+          elevation: 1,
           backgroundColor: Colors.white,
           title: const Text(
             "facebook",

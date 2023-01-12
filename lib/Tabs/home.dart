@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_assig/data/mystory.dart';
 
 import '../data/photodata.dart';
 
@@ -74,19 +75,15 @@ class _HomeState extends State<Home> {
           Container(
             height: MediaQuery.of(context).size.height * 0.108,
             width: MediaQuery.of(context).size.width,
-            color: Colors.red,
+            // color: Colors.red,
             child: Row(
               children: [
+                SingleChildScrollView(
+                  child: Row(children: []),
+                ),
                 Expanded(
                   flex: 3,
-                  child: Container(
-                    /* width: MediaQuery.of(context).size.width * 0.1, */
-                    // width: 50,
-                    height: MediaQuery.of(context).size.height * 0.1,
-                    // height: 50,
-                    color: Colors.yellow,
-                    margin: EdgeInsets.symmetric(horizontal: 5),
-                  ),
+                  child: mystory(),
                 ),
                 Expanded(
                   flex: 12,
@@ -95,7 +92,7 @@ class _HomeState extends State<Home> {
                     itemBuilder: (context, index) {
                       return RecentPhotos();
                     },
-                    itemCount: 100,
+                    itemCount: 10,
                   ),
                 ),
               ],
