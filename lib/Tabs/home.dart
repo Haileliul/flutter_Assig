@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_assig/data/mystory.dart';
 
+import '../data/heading.dart';
 import '../data/photodata.dart';
 
 void main() => runApp(const Home());
@@ -78,10 +79,11 @@ class _HomeState extends State<Home> {
             // color: Colors.red,
             child: Row(
               children: [
-                SingleChildScrollView(
+                /*    SingleChildScrollView(
                   child: Row(children: []),
-                ),
-                Expanded(
+                ), */
+
+                const Expanded(
                   flex: 3,
                   child: mystory(),
                 ),
@@ -95,6 +97,65 @@ class _HomeState extends State<Home> {
                     itemCount: 10,
                   ),
                 ),
+              ],
+            ),
+          ),
+          const Divider(
+            color: Colors.grey,
+            thickness: 5.0,
+          ),
+          Container(
+            height: MediaQuery.of(context).size.height * 0.585,
+            width: MediaQuery.of(context).size.width,
+            color: Colors.grey,
+            child: ListView(
+              children: [
+                Container(
+                  height: MediaQuery.of(context).size.height * 0.585,
+                  width: MediaQuery.of(context).size.width,
+                  color: Colors.red,
+                  // decoration: BoxDecoration(border: BoxBorder() ),
+                  child: Column(children: [
+                    heading(),
+                    Container(),
+                    Container(),
+                    Row(children: [
+                      TextButton(
+                        onPressed: () {},
+                        child: Row(
+                          children: [
+                            Icon(
+                              Icons.thumb_up_outlined,
+                            ),
+                            Text("89K"),
+                          ],
+                        ),
+                      ),
+                      TextButton(
+                        onPressed: () {},
+                        child: Row(
+                          children: [
+                            Icon(
+                              Icons.messenger_outline,
+                            ),
+                            Text("89K"),
+                          ],
+                        ),
+                      ),
+                      TextButton(
+                        onPressed: () {},
+                        child: Row(
+                          children: [
+                            Icon(
+                              Icons.forward_rounded,
+                            ),
+                            Text("89K"),
+                          ],
+                        ),
+                      ),
+                    ]),
+                  ]),
+                )
               ],
             ),
           ),

@@ -14,7 +14,7 @@ class mystory extends StatelessWidget {
       // height: MediaQuery.of(context).size.height * 0.2,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15),
-        color: Colors.yellow,
+        color: Colors.grey[200],
       ),
 
       // height: 80,

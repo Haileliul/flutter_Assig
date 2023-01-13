@@ -34,6 +34,7 @@ class __MyhomePageState extends State<_MyhomePage> {
       length: 6,
       child: Scaffold(
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           elevation: 1,
           backgroundColor: Colors.white,
           title: const Text(
@@ -54,15 +55,21 @@ class __MyhomePageState extends State<_MyhomePage> {
               ),
               focusColor: Colors.amber,
             ),
-            IconButton(
-              onPressed: () {},
-              icon: const Icon(
-                Icons.menu,
-                color: Colors.black,
-                size: 25,
-              ),
-              // highlightColor: Colors.amber,
-            ),
+            Builder(
+              builder: (context) {
+                return IconButton(
+                  onPressed: () {
+                    Scaffold.of(context).openDrawer();
+                  },
+                  icon: const Icon(
+                    Icons.menu,
+                    color: Colors.black,
+                    size: 25,
+                  ),
+                  // highlightColor: Colors.amber,
+                );
+              },
+            )
           ],
           bottom: const TabBar(
               unselectedLabelColor: Colors.black54,
@@ -85,6 +92,136 @@ class __MyhomePageState extends State<_MyhomePage> {
           Video(),
           Market(),
         ]),
+        drawer: Container(
+          color: Colors.grey,
+          width: 300,
+          child: Column(
+            children: [
+              Container(
+                width: double.infinity,
+                height: 50,
+                color: Colors.red,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      child: Row(
+                        children: [
+                          IconButton(
+                            onPressed: () {},
+                            icon: Icon(Icons.arrow_back),
+                          ),
+                          Text(
+                            "Menu",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 20),
+                          ),
+                        ],
+                      ),
+                    ),
+                    IconButton(
+                      onPressed: () {},
+                      icon: const Icon(
+                        Icons.search,
+                        color: Colors.black,
+                        size: 25,
+                      ),
+                      focusColor: Colors.amber,
+                    ),
+                  ],
+                ),
+              ),
+              ListTile(
+                leading: CircleAvatar(
+                  backgroundImage: AssetImage(
+                      'Assets/images/multi-ethnic-guys-and-girls-taking-selfie-outdoors-with-backlight-happy-life-style-friendship.jpg'),
+                ),
+                title: Text("Haileliul Baye"),
+                subtitle: Text("View Your profile"),
+              ),
+              Divider(
+                color: Colors.black,
+                thickness: 1,
+                indent: 5,
+              ),
+              Container(
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height * 0.8,
+                color: Colors.yellow,
+                child: ListView(
+                  children: [
+                    Container(
+                      height: 50,
+                      width: double.infinity,
+                      color: Colors.pink,
+                      child: TextButton(
+                        onPressed: () {
+                          print("it has been cliked");
+                        },
+                        child: ListTile(
+                          leading: Icon(Icons.library_add),
+                          title: Text("this is the title"),
+                          trailing: Text("haha"),
+                        ),
+                      ),
+                      margin: EdgeInsets.only(bottom: 5),
+                    ),
+                    Container(
+                      height: 50,
+                      width: double.infinity,
+                      color: Colors.pink,
+                      child: TextButton(
+                        onPressed: () {
+                          print("it has been cliked");
+                        },
+                        child: ListTile(
+                          leading: Icon(Icons.library_add),
+                          title: Text("this is the title"),
+                          trailing: Text("haha"),
+                        ),
+                      ),
+                      margin: EdgeInsets.only(bottom: 5),
+                    ),
+                    Container(
+                      height: 50,
+                      width: double.infinity,
+                      color: Colors.pink,
+                      child: TextButton(
+                        onPressed: () {
+                          print("it has been cliked");
+                        },
+                        child: ListTile(
+                          leading: Icon(Icons.library_add),
+                          title: Text("this is the title"),
+                          trailing: Text("haha"),
+                        ),
+                      ),
+                      margin: EdgeInsets.only(bottom: 5),
+                    ),
+                    Container(
+                      height: 50,
+                      width: double.infinity,
+                      color: Colors.pink,
+                      child: TextButton(
+                        onPressed: () {
+                          print("it has been cliked");
+                        },
+                        child: ListTile(
+                          leading: Icon(Icons.library_add),
+                          title: Text("this is the title"),
+                          trailing: Text("haha"),
+                        ),
+                      ),
+                      margin: EdgeInsets.only(bottom: 5),
+                    ),
+                  ],
+                ),
+              ),
+
+              // list
+            ],
+          ),
+        ),
       ),
     );
   }

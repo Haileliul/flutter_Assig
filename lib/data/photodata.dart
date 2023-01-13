@@ -20,11 +20,12 @@ class _RecentPhotosState extends State<RecentPhotos> {
       // color: Colors.blue,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(5),
-          color: Colors.red,
-          image: DecorationImage(
+          // color: Colors.red,
+          image: const DecorationImage(
             image: AssetImage('Assets/images/cheerful-man-eating-poke.jpg'),
             fit: BoxFit.fill,
           )),
+
       child: Stack(
         children: [
           /*   Image(
