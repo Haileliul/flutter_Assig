@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_assig/data/mystory.dart';
 
-import '../data/heading.dart';
+import '../data/maincontent/bottom.dart';
+import '../data/maincontent/heading.dart';
 import '../data/photodata.dart';
 
 void main() => runApp(const Home());
@@ -113,48 +114,60 @@ class _HomeState extends State<Home> {
                 Container(
                   height: MediaQuery.of(context).size.height * 0.585,
                   width: MediaQuery.of(context).size.width,
-                  color: Colors.red,
+                  // color: Colors.red,
                   // decoration: BoxDecoration(border: BoxBorder() ),
-                  child: Column(children: [
-                    heading(),
-                    Container(),
-                    Container(),
-                    Row(children: [
-                      TextButton(
-                        onPressed: () {},
-                        child: Row(
-                          children: [
-                            Icon(
-                              Icons.thumb_up_outlined,
-                            ),
-                            Text("89K"),
-                          ],
-                        ),
+                  child: ListView(
+                    children: [
+                      Column(
+                        children: [
+                          heading(),
+                          Container(
+                            height: MediaQuery.of(context).size.height * 0.2,
+                            width: MediaQuery.of(context).size.width * 0.9,
+                            color: Colors.red,
+                          ),
+                          Container(),
+                          Row(
+                            children: [
+                              Bottom(),
+                            ],
+                          ),
+                        ],
                       ),
-                      TextButton(
-                        onPressed: () {},
-                        child: Row(
-                          children: [
-                            Icon(
-                              Icons.messenger_outline,
-                            ),
-                            Text("89K"),
-                          ],
-                        ),
+                      Column(
+                        children: [
+                          heading(),
+                          Container(
+                            height: MediaQuery.of(context).size.height * 0.2,
+                            width: MediaQuery.of(context).size.width * 0.9,
+                            color: Colors.red,
+                          ),
+                          Container(),
+                          Row(
+                            children: [
+                              Bottom(),
+                            ],
+                          ),
+                        ],
                       ),
-                      TextButton(
-                        onPressed: () {},
-                        child: Row(
-                          children: [
-                            Icon(
-                              Icons.forward_rounded,
-                            ),
-                            Text("89K"),
-                          ],
-                        ),
+                      Column(
+                        children: [
+                          heading(),
+                          Container(
+                            height: MediaQuery.of(context).size.height * 0.2,
+                            width: MediaQuery.of(context).size.width * 0.9,
+                            color: Colors.red,
+                          ),
+                          Container(),
+                          Row(
+                            children: [
+                              Bottom(),
+                            ],
+                          ),
+                        ],
                       ),
-                    ]),
-                  ]),
+                    ],
+                  ),
                 )
               ],
             ),

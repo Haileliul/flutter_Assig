@@ -37,7 +37,7 @@ class heading extends StatelessWidget {
         ],
       ),
       trailing: IconButton(
-        icon: Icon(Icons.vertical_split),
+        icon: Icon(Icons.more_horiz),
         onPressed: () {},
       ),
     );
