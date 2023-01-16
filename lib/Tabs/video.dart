@@ -144,10 +144,10 @@ class _VideoState extends State<Video> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text("Video Notifications"),
-                  Text("See All" + "(" + "21" + ")")
+                  Text("See All" + "(" + "21" + ")"),
                 ],
               ),
-            )
+            ),
           ]),
         ),
       ],
