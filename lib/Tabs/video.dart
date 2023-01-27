@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../data/common/contents.dart';
+// import '../data/maincontent/heading.dart';
+
 void main() => runApp(Video());
 
 class Video extends StatefulWidget {
@@ -12,11 +15,13 @@ class Video extends StatefulWidget {
 class _VideoState extends State<Video> {
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+
     return Column(
       children: [
         Container(
-          height: MediaQuery.of(context).size.height * 0.07,
-          width: MediaQuery.of(context).size.width,
+          height: size.height * 0.07,
+          width: size.width,
           decoration: BoxDecoration(
             // color: Colors.red,
             border: Border(
@@ -65,90 +70,143 @@ class _VideoState extends State<Video> {
           ),
         ),
         Container(
-          width: MediaQuery.of(context).size.width,
+          width: size.width,
           height: MediaQuery.of(context).size.height * 0.7759,
-          color: Colors.red,
-          child: Column(children: [
-            Container(
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height * 0.05,
-              color: Colors.green,
-              child: ListView(scrollDirection: Axis.horizontal, children: [
-                Container(
-                  margin: EdgeInsets.only(right: 15),
-                  child: TextButton(
-                    onPressed: () {},
-                    child: Row(
-                      children: [
-                        Icon(Icons.video_library),
-                        Text("For You"),
-                      ],
-                    ),
-                  ),
-                ),
-                Container(
-                  margin: EdgeInsets.only(right: 15),
-                  child: TextButton(
-                    onPressed: () {},
-                    child: Row(
-                      children: [
-                        Icon(Icons.video_library),
-                        Text("For You"),
-                      ],
-                    ),
-                  ),
-                ),
-                Container(
-                  margin: EdgeInsets.only(right: 15),
-                  child: TextButton(
-                    onPressed: () {},
-                    child: Row(
-                      children: [
-                        Icon(Icons.video_library),
-                        Text("For You"),
-                      ],
-                    ),
-                  ),
-                ),
-                Container(
-                  margin: EdgeInsets.only(right: 15),
-                  child: TextButton(
-                    onPressed: () {},
-                    child: Row(
-                      children: [
-                        Icon(Icons.video_library),
-                        Text("For You"),
-                      ],
-                    ),
-                  ),
-                ),
-                Container(
-                  margin: EdgeInsets.only(right: 15),
-                  child: TextButton(
-                    onPressed: () {},
-                    child: Row(
-                      children: [
-                        Icon(Icons.video_library),
-                        Text("For You"),
-                      ],
-                    ),
-                  ),
-                ),
-              ]),
-            ),
-            Container(
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height * 0.05,
-              color: Colors.pink,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          // color: Colors.red,
+          child: ListView(
+            children: [
+              Column(
                 children: [
-                  Text("Video Notifications"),
-                  Text("See All" + "(" + "21" + ")"),
+                  Container(
+                    width: MediaQuery.of(context).size.width,
+                    height: MediaQuery.of(context).size.height * 0.05,
+                    // color: Colors.green,
+                    child:
+                        ListView(scrollDirection: Axis.horizontal, children: [
+                      Container(
+                        margin: EdgeInsets.only(right: 15),
+                        child: TextButton(
+                          onPressed: () {},
+                          child: Row(
+                            children: [
+                              Icon(Icons.live_tv),
+                              Text("For You"),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(right: 15),
+                        child: TextButton(
+                          onPressed: () {},
+                          child: Row(
+                            children: [
+                              Icon(Icons.video_camera_back),
+                              Text("Live"),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(right: 15),
+                        child: TextButton(
+                          onPressed: () {},
+                          child: Row(
+                            children: [
+                              Icon(Icons.check_box),
+                              Text("Following"),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(right: 15),
+                        child: TextButton(
+                          onPressed: () {},
+                          child: Row(
+                            children: [
+                              Icon(Icons.bookmark),
+                              Text("Saved"),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(right: 15),
+                        child: TextButton(
+                          onPressed: () {},
+                          child: Row(
+                            children: [
+                              Icon(Icons.gamepad),
+                              Text("Gamming"),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ]),
+                  ),
+                  InkWell(
+                    onTap: () {},
+                    highlightColor: Colors.red,
+                    child: Container(
+                      width: MediaQuery.of(context).size.width,
+                      height: MediaQuery.of(context).size.height * 0.1,
+                      // color: Colors.pink,
+                      child: Column(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text("Video Notifications"),
+                              Text("See All" + "(" + "21" + ")"),
+                            ],
+                          ),
+                          Container(
+                            color: Colors.grey[350],
+                            height: 25,
+                            width: MediaQuery.of(context).size.width,
+                            child: Row(
+                              children: [
+                                Icon(
+                                  Icons.forward,
+                                  color: Colors.blue,
+                                  size: 20,
+                                ),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Text("3 firends shared Videos"),
+                              ],
+                            ),
+                          ),
+                          Container(
+                            color: Colors.grey[350],
+                            height: 25,
+                            width: MediaQuery.of(context).size.width,
+                            child: Row(
+                              children: [
+                                Icon(
+                                  Icons.video_camera_back,
+                                  color: Colors.red,
+                                  size: 20,
+                                ),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Text("3 firends shared Videos"),
+                              ],
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                  content(),
+                  content(),
                 ],
               ),
-            ),
-          ]),
+            ],
+          ),
         ),
       ],
     );

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_assig/data/mystory.dart';
 
-import '../data/maincontent/bottom.dart';
-import '../data/maincontent/heading.dart';
+import '../data/common/contents.dart';
+// import '../data/maincontent/bottom.dart';
+// import '../data/maincontent/heading.dart';
 import '../data/photodata.dart';
 
 void main() => runApp(const Home());
@@ -17,26 +18,24 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Container(
-      width: MediaQuery.of(context).size.width * 0.9,
-      height: MediaQuery.of(context).size.width * 0.8,
+      width: size.width,
+      height: size.width * 0.8,
       child: Column(
         children: [
           Container(
-            height: MediaQuery.of(context).size.height * 0.108,
-            width: MediaQuery.of(context).size.width,
+            height: size.height * 0.10,
+            width: size.width,
             // color: Colors.red,
             // padding: EdgeInsets.symmetric(horizontal: 5, vertical: 0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                IconButton(
-                  onPressed: () {},
-                  icon: const Icon(
-                    Icons.person_pin,
-                    size: 32,
-                  ),
-                  splashRadius: 20.0,
+                CircleAvatar(
+                  radius: 27,
+                  backgroundImage: AssetImage(
+                      'Assets/images/smiling-business-woman-working-with-laptop-while-looking-at-camera-in-modern-startup-office.jpg'),
                 ),
                 TextButton(
                   onPressed: () {},
@@ -75,103 +74,41 @@ class _HomeState extends State<Home> {
             thickness: 2.0,
           ),
           Container(
-            height: MediaQuery.of(context).size.height * 0.108,
-            width: MediaQuery.of(context).size.width,
-            // color: Colors.red,
-            child: Row(
-              children: [
-                /*    SingleChildScrollView(
-                  child: Row(children: []),
-                ), */
-
-                const Expanded(
-                  flex: 3,
-                  child: mystory(),
-                ),
-                Expanded(
-                  flex: 12,
-                  child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    itemBuilder: (context, index) {
-                      return RecentPhotos();
-                    },
-                    itemCount: 10,
+              height: size.height * 0.695,
+              width: size.width,
+              // color: Colors.red,
+              child: ListView(
+                children: [
+                  Container(
+                    height: size.height * 0.15,
+                    width: size.width,
+                    // color: Colors.red,
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      children: [
+                        mystory(),
+                        Container(
+                          height: double.infinity,
+                          width: size.width * 0.9,
+                          // color: Colors.amber,
+                          child: ListView.builder(
+                              scrollDirection: Axis.horizontal,
+                              itemCount: 10,
+                              itemBuilder: (context, index) {
+                                return RecentPhotos();
+                              }),
+                        )
+                      ],
+                    ),
                   ),
-                ),
-              ],
-            ),
-          ),
-          const Divider(
-            color: Colors.grey,
-            thickness: 5.0,
-          ),
-          Container(
-            height: MediaQuery.of(context).size.height * 0.585,
-            width: MediaQuery.of(context).size.width,
-            color: Colors.grey,
-            child: ListView(
-              children: [
-                Container(
-                  height: MediaQuery.of(context).size.height * 0.585,
-                  width: MediaQuery.of(context).size.width,
-                  // color: Colors.red,
-                  // decoration: BoxDecoration(border: BoxBorder() ),
-                  child: ListView(
-                    children: [
-                      Column(
-                        children: [
-                          heading(),
-                          Container(
-                            height: MediaQuery.of(context).size.height * 0.2,
-                            width: MediaQuery.of(context).size.width * 0.9,
-                            color: Colors.red,
-                          ),
-                          Container(),
-                          Row(
-                            children: [
-                              Bottom(),
-                            ],
-                          ),
-                        ],
-                      ),
-                      Column(
-                        children: [
-                          heading(),
-                          Container(
-                            height: MediaQuery.of(context).size.height * 0.2,
-                            width: MediaQuery.of(context).size.width * 0.9,
-                            color: Colors.red,
-                          ),
-                          Container(),
-                          Row(
-                            children: [
-                              Bottom(),
-                            ],
-                          ),
-                        ],
-                      ),
-                      Column(
-                        children: [
-                          heading(),
-                          Container(
-                            height: MediaQuery.of(context).size.height * 0.2,
-                            width: MediaQuery.of(context).size.width * 0.9,
-                            color: Colors.red,
-                          ),
-                          Container(),
-                          Row(
-                            children: [
-                              Bottom(),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ],
+                  const Divider(
+                    color: Colors.grey,
+                    thickness: 5.0,
                   ),
-                )
-              ],
-            ),
-          ),
+                  content(),
+                  content(),
+                ],
+              ))
         ],
       ),
     );

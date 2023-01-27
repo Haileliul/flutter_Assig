@@ -13,13 +13,14 @@ class _RecentPhotosState extends State<RecentPhotos> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.of(context).size.width * 0.1,
+      width: MediaQuery.of(context).size.width * 0.22,
       // width: 50,
-      height: MediaQuery.of(context).size.height * 0.1,
+      height: MediaQuery.of(context).size.height * 0.2,
       // height: 50,
       // color: Colors.blue,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(5),
+          // borderRadius: BorderRadius.circular(22),
+          borderRadius: BorderRadius.all(Radius.circular(10)),
           // color: Colors.red,
           image: const DecorationImage(
             image: AssetImage('Assets/images/cheerful-man-eating-poke.jpg'),
@@ -44,9 +45,12 @@ class _RecentPhotosState extends State<RecentPhotos> {
           Positioned(
             child: Align(
               alignment: Alignment.topRight,
-              child: Text(
-                "0",
-                style: TextStyle(color: Colors.white),
+              child: CircleAvatar(
+                radius: 10,
+                child: Text(
+                  "0",
+                  style: TextStyle(color: Colors.white),
+                ),
               ),
             ),
           ),

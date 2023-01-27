@@ -8,7 +8,7 @@ class mystory extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      // width: MediaQuery.of(context).size.width * 0.2,
+      width: MediaQuery.of(context).size.width * 0.2,
       // width: 50,
 
       // height: MediaQuery.of(context).size.height * 0.2,
@@ -24,7 +24,7 @@ class mystory extends StatelessWidget {
         children: [
           Container(
             width: double.infinity,
-            height: 30,
+            height: 70,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.vertical(
                     top: Radius.circular(5), bottom: Radius.zero),
