@@ -19,14 +19,18 @@ class vert extends StatelessWidget {
               alignment: Alignment.bottomRight,
               children: [
                 CircleAvatar(
+                  radius: 35,
                   backgroundImage: AssetImage(
                       'Assets/images/woman-with-hot-cup-at-home-calendar.jpg'),
                 ),
-                Text(
-                  "6h",
-                  style: TextStyle(
-                    color: Colors.green,
-                    backgroundColor: Colors.grey,
+                CircleAvatar(
+                  radius: 10,
+                  backgroundColor: Colors.grey,
+                  child: Text(
+                    "6h",
+                    style: TextStyle(
+                      color: Colors.green,
+                    ),
                   ),
                 ),
               ],

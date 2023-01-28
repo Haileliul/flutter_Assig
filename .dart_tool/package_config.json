@@ -128,6 +128,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "switcher_button",
+      "rootUri": "file:///home/haile/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/switcher_button-0.0.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "term_glyph",
       "rootUri": "file:///home/haile/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/term_glyph-1.2.1",
       "packageUri": "lib/",
@@ -152,7 +158,7 @@
       "languageVersion": "2.18"
     }
   ],
-  "generated": "2023-01-27T10:23:07.676075Z",
+  "generated": "2023-01-28T18:21:34.807686Z",
   "generator": "pub",
   "generatorVersion": "2.18.6"
 }
