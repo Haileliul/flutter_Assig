@@ -54,94 +54,97 @@ class _GroupState extends State<Group> {
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height * 0.747,
             // color: Colors.green,
-            child: ListView(
-              children: [
-                Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height * 0.2,
-                  decoration: BoxDecoration(
-                      border: Border(
-                          bottom: BorderSide(width: 1, color: Colors.grey))),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(12.0),
-                            child: TextButton(
-                              onPressed: () {},
-                              child: Padding(
-                                padding: const EdgeInsets.all(12.0),
-                                child: Text(
-                                  "Suggestions",
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.black,
-                                    height: 1,
+            child: SingleChildScrollView(
+              scrollDirection: Axis.vertical,
+              child: Column(
+                children: [
+                  Container(
+                    width: MediaQuery.of(context).size.width,
+                    height: MediaQuery.of(context).size.height * 0.15,
+                    decoration: BoxDecoration(
+                        border: Border(
+                            bottom: BorderSide(width: 1, color: Colors.grey))),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(top: 2, left: 5),
+                              child: TextButton(
+                                onPressed: () {},
+                                child: Padding(
+                                  padding: const EdgeInsets.all(12.0),
+                                  child: Text(
+                                    "Suggestions",
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.black,
+                                      height: 1,
+                                    ),
                                   ),
                                 ),
-                              ),
-                              style: ButtonStyle(
-                                backgroundColor:
-                                    MaterialStateProperty.all(Colors.grey),
-                              ),
-                            ),
-                          ),
-                          SizedBox(
-                            width: 20,
-                            height: 1,
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(12.0),
-                            child: TextButton(
-                              onPressed: () {},
-                              child: Padding(
-                                padding: const EdgeInsets.all(10.0),
-                                child: Text(
-                                  "Your Friends",
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.black,
-                                  ),
+                                style: ButtonStyle(
+                                  backgroundColor:
+                                      MaterialStateProperty.all(Colors.grey),
                                 ),
                               ),
-                              style: ButtonStyle(
-                                backgroundColor:
-                                    MaterialStateProperty.all(Colors.grey),
+                            ),
+                            SizedBox(
+                              width: 20,
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(left: 2),
+                              child: TextButton(
+                                onPressed: () {},
+                                child: Padding(
+                                  padding: const EdgeInsets.all(10.0),
+                                  child: Text(
+                                    "Your Friends",
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                ),
+                                style: ButtonStyle(
+                                  backgroundColor:
+                                      MaterialStateProperty.all(Colors.grey),
+                                ),
                               ),
                             ),
-                          ),
-                        ],
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            "Friend requests",
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 15),
-                          ),
-                          TextButton(onPressed: () {}, child: Text("See all")),
-                        ],
-                      )
-                    ],
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              "Friend requests",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 15),
+                            ),
+                            TextButton(
+                                onPressed: () {}, child: Text("See all")),
+                          ],
+                        )
+                      ],
+                    ),
                   ),
-                ),
-                Container(
-                  height: MediaQuery.of(context).size.height * 0.6,
-                  width: MediaQuery.of(context).size.width,
-                  // color: Colors.amber,
-                  child: ListView.builder(
-                    physics: NeverScrollableScrollPhysics(),
-                    itemCount: 30,
-                    itemBuilder: (context, index) => myList(),
+                  Container(
+                    height: MediaQuery.of(context).size.height * 0.7,
+                    width: MediaQuery.of(context).size.width,
+                    // color: Colors.amber,
+                    child: ListView.builder(
+                      // physics: NeverScrollableScrollPhysics(),
+                      itemCount: 30,
+                      itemBuilder: (context, index) => myList(),
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-          )
+          ),
         ],
       ),
     );

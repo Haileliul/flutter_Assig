@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_assig/data/mystory.dart';
 
 import '../data/common/contents.dart';
 // import '../data/maincontent/bottom.dart';
 // import '../data/maincontent/heading.dart';
-import '../data/photodata.dart';
+import '../data/home/mystory.dart';
+import '../data/home/photodata.dart';
 
 void main() => runApp(const Home());
 
@@ -77,37 +77,44 @@ class _HomeState extends State<Home> {
               height: size.height * 0.695,
               width: size.width,
               // color: Colors.red,
-              child: ListView(
-                children: [
-                  Container(
-                    height: size.height * 0.15,
-                    width: size.width,
-                    // color: Colors.red,
-                    child: ListView(
-                      scrollDirection: Axis.horizontal,
-                      children: [
-                        mystory(),
-                        Container(
-                          height: double.infinity,
-                          width: size.width * 0.9,
-                          // color: Colors.amber,
-                          child: ListView.builder(
-                              scrollDirection: Axis.horizontal,
-                              itemCount: 10,
-                              itemBuilder: (context, index) {
-                                return RecentPhotos();
-                              }),
-                        )
-                      ],
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    Container(
+                      height: size.height * 0.15,
+                      width: size.width,
+                      // color: Colors.red,
+                      child: ListView(
+                        scrollDirection: Axis.horizontal,
+                        children: [
+                          mystory(),
+                          Container(
+                            height: double.infinity,
+                            width: size.width * 0.9,
+                            // color: Colors.amber,
+                            child: ListView.builder(
+                                scrollDirection: Axis.horizontal,
+                                itemCount: 10,
+                                itemBuilder: (context, index) {
+                                  return RecentPhotos();
+                                }),
+                          )
+                        ],
+                      ),
                     ),
-                  ),
-                  const Divider(
-                    color: Colors.grey,
-                    thickness: 5.0,
-                  ),
-                  content(),
-                  content(),
-                ],
+                    const Divider(
+                      color: Colors.grey,
+                      thickness: 5.0,
+                    ),
+                    Container(
+                      height: size.height * 0.7,
+                      child: ListView.builder(
+                        itemCount: 4,
+                        itemBuilder: (context, index) => content(),
+                      ),
+                    ),
+                  ],
+                ),
               ))
         ],
       ),
