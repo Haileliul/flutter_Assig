@@ -167,6 +167,7 @@ class _MarketState extends State<Market> {
                       ),
                       Expanded(
                         child: ListView.builder(
+                          itemCount: 10,
                           itemBuilder: (context, index) {
                             return Container(
                               height: MediaQuery.of(context).size.height * 0.3,
